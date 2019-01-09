@@ -12,12 +12,23 @@ class App extends Component {
         {id:4, name: 'Paul', age: 72},
     ]
   }
+
+  addPerson = person => {
+    //todo: temporary until we're using DB
+    person.id = Math.random();
+    let people = [...this.state.people, person]
+    this.setState({
+        people: people
+    })
+
+  }
+
   render() {
     return (
         <div className="App">
           <h1>App</h1>
           <People people={this.state.people}/>
-          <AddPerson />
+          <AddPerson addPerson={this.addPerson}/>
         </div>
     );
   }
