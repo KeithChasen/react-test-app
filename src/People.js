@@ -1,8 +1,6 @@
 import React from 'react';
 
-const People = (props) => {
-
-    const {people} = props
+const People = ({people}) => {
 
     const personList = people.map(person => {
         return (
